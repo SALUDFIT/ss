@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitReminder - Tu Asistente Personal de Ejercicio</title>
+    <!-- Vincular el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="FitReminder Logo" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#about">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register" data-bs-toggle="modal" data-bs-target="#registerModal">Regístrate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero-section" id="hero">
+        <div class="container text-center text-white">
+            <h1 data-aos="fade-up" data-aos-delay="200">¡Transforma tu cuerpo con FitReminder!</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Recibe recordatorios personalizados y motivación para mejorar tu condición física. ¡Es momento de empezar!</p>
+            <a href="#test" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="400">Comienza ahora</a>
+        </div>
+    </header>
+
+    <!-- Sección de Test -->
+    <section id="test" class="container mt-5">
+        <h2 class="text-center">Descubre el mejor plan para ti</h2>
+        <p class="text-center" data-aos="fade-up" data-aos-delay="200">Contesta este test para adaptar el mejor plan de ejercicios según tus necesidades.</p>
+        <form id="testForm" class="mt-4">
+            <div class="question">
+                <p>1. ¿Cuál es tu principal objetivo de ejercicio?</p>
+                <label><input type="radio" name="q1" value="bajar_peso"> Bajar de peso</label><br>
+                <label><input type="radio" name="q1" value="aumentar_musculo"> Aumentar músculo</label><br>
+                <label><input type="radio" name="q1" value="mantener_salud"> Mantener salud</label><br>
+            </div>
+            <div class="question">
+                <p>2. ¿Cuánto tiempo puedes entrenar por semana?</p>
+                <label><input type="radio" name="q2" value="menos_1_hora"> Menos de 1 hora</label><br>
+                <label><input type="radio" name="q2" value="1_a_3_horas"> 1 a 3 horas</label><br>
+                <label><input type="radio" name="q2" value="mas_3_horas"> Más de 3 horas</label><br>
+            </div>
+            <div class="question">
+                <p>3. ¿Cuál es tu nivel de actividad física?</p>
+                <label><input type="radio" name="q3" value="principiante"> Principiante</label><br>
+                <label><input type="radio" name="q3" value="intermedio"> Intermedio</label><br>
+                <label><input type="radio" name="q3" value="avanzado"> Avanzado</label><br>
+            </div>
+            <div class="question">
+                <p>4. ¿Tienes alguna restricción de salud para hacer ejercicio?</p>
+                <label><input type="radio" name="q4" value="no"> No</label><br>
+                <label><input type="radio" name="q4" value="si"> Sí</label><br>
+            </div>
+            <div class="question">
+                <p>5. ¿Prefieres entrenamientos en casa o en el gimnasio?</p>
+                <label><input type="radio" name="q5" value="casa"> En casa</label><br>
+                <label><input type="radio" name="q5" value="gimnasio"> En gimnasio</label><br>
+            </div>
+            <div class="question">
+                <p>6. ¿Cuántos días a la semana puedes comprometerte a entrenar?</p>
+                <label><input type="radio" name="q6" value="2_dias"> 2 días</label><br>
+                <label><input type="radio" name="q6" value="3_dias"> 3 días</label><br>
+                <label><input type="radio" name="q6" value="5_dias"> 5 días</label><br>
+            </div>
+            <div class="question">
+                <p>7. ¿Te gustaría hacer entrenamientos en grupo o en solitario?</p>
+                <label><input type="radio" name="q7" value="grupo"> En grupo</label><br>
+                <label><input type="radio" name="q7" value="solitario"> En solitario</label><br>
+            </div>
+            <div class="question">
+                <p>8. ¿Qué tipo de ejercicios prefieres?</p>
+                <label><input type="radio" name="q8" value="cardio"> Cardio</label><br>
+                <label><input type="radio" name="q8" value="fuerza"> Fuerza</label><br>
+                <label><input type="radio" name="q8" value="flexibilidad"> Flexibilidad</label><br>
+            </div>
+            <div class="question">
+                <p>9. ¿Estás buscando un plan de entrenamiento a largo plazo o corto plazo?</p>
+                <label><input type="radio" name="q9" value="corto_plazo"> Corto plazo</label><br>
+                <label><input type="radio" name="q9" value="largo_plazo"> Largo plazo</label><br>
+            </div>
+            <div class="question">
+                <p>10. ¿Estás interesado en recibir asesoría nutricional?</p>
+                <label><input type="radio" name="q10" value="si"> Sí</label><br>
+                <label><input type="radio" name="q10" value="no"> No</label><br>
+            </div>
+            <button type="submit" class="btn btn-success mt-4">Enviar Test</button>
+        </form>
+    </section>
+
+    <!-- Sección de Información de la Empresa -->
+    <section id="about" class="container mt-5">
+        <h2 class="text-center">Sobre Nosotros</h2>
+        <p class="text-center">Somos FitReminder, una empresa dedicada a ofrecer soluciones personalizadas para mejorar tu salud física a través de entrenamientos y recordatorios automáticos adaptados a tus necesidades.</p>
+        
+        <h4>Misión</h4>
+        <p>Brindar un servicio de asistencia integral para el bienestar físico y mental de nuestros usuarios, con planes de ejercicio personalizados y motivación constante.</p>
+        
+        <h4>Visión</h4>
+        <p>Ser la plataforma líder en personalización de entrenamientos y asesoría fitness en línea, creando un impacto positivo en la vida de nuestros usuarios.</p>
+        
+        <h4>Valores</h4>
+        <ul>
+            <li>Compromiso con la salud</li>
+            <li>Innovación constante</li>
+            <li>Empatía y respeto</li>
+            <li>Trabajo en equipo</li>
+        </ul>
+
+        <h4>Razón Social</h4>
+        <p>FitReminder S.A. de C.V.</p>
+    </section>
+
+    <!-- Sección de Contacto (aparece después de completar el test) -->
+    <section id="contact" class="container mt-5" style="display:none;">
+        <h2 class="text-center">Contáctanos</h2>
+        <p class="text-center">¿Tienes alguna pregunta o inquietud? ¡Nos encantaría saber de ti!</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="contactEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Formulario de Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Iniciar Sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 FitReminder. Todos los derechos reservados.</p>
+        <img src="logo.png" alt="FitReminder Logo" width="50" height="50">
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mostrar el formulario de contacto al terminar el test
+        document.getElementById('testForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("¡Gracias por completar el test! Ahora, por favor, rellena el formulario de contacto.");
+            document.getElementById('test').style.display = 'none';
+            document.getElementById('contact').style.display = 'block';
+        });
+
+        // Simulación de envío de formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('¡Nos pondremos en contacto contigo lo más pronto posible!');
+        });
+
+        // Simulación de registro
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('¡Registro exitoso!');
+        });
+
+        // Redirección al enlace de YouTube después de iniciar sesión
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('¡Bienvenido de nuevo!');
+            window.location.href = 'https://www.youtube.com/watch?v=BtLSaxRnIhc'; // Redirige a YouTube
+        });
+    </script>
+</body>
+
+</html>
